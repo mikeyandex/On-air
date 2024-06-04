@@ -1,0 +1,22 @@
+.app-wrapper {
+  max-width: 1440px;
+  min-width: 390px;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-template-areas:
+  'header header'
+  'nav main';
+  gap: 2vw;
+  background-color: rgba(122, 118, 113, 0.3);
+  padding: 1vw;
+}
+
+.main {
+  grid-area: main;
+  /*background-color:rgb(250, 250, 250);*/
+  opacity:1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+

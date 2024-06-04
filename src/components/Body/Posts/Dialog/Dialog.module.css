@@ -1,0 +1,16 @@
+.dialog {
+  font-size: 12px;
+  padding: 1vw 0 0 0; 
+  display: flex;
+  margin: 0;
+  color:rgb(31, 65, 133);
+  font-size: 1.9vw;
+  text-decoration: none;
+  align-self:baseline;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: flex-start;
+    height: 5vw;
+  }

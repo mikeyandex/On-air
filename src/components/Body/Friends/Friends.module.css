@@ -1,0 +1,122 @@
+.list {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 1vw;
+  background-color: rgba(250, 250, 250);
+  border-top-left-radius: 5vw;
+  border-bottom-left-radius: 5vw;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 1vw;
+}
+
+.user {
+  font-size: 1.5vw;
+  margin: 0;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+}
+
+.slogan {
+  font-size: 1vw;
+  margin: 0;
+  font-style: italic;
+  display: block;
+  width: 100%;
+  padding-bottom: 1vw;
+}
+
+.button {
+  width: 100%;
+  height: 2vw;
+  border: none;
+  background-image: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgb(31, 65, 133);
+  color: #fff;
+  font-size: 1vw;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 8vw;
+    margin-left: 1vw;
+  border: solid 1px rgba(122, 118, 113, 0.3);
+  border-radius: 10px;
+  padding: 0 1vw 0 1vw;
+  position: relative;
+}
+
+.icon {
+  width: 8vw;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  margin: 1vw;
+  align-self: center;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.selected {
+  font-size: 1.5vw;
+  padding: 1vw;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.unSelected {
+  font-size: 1.5vw;
+  padding: 1vw;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.selector {
+width: 81vw;
+height: 4vw;
+border-radius: 10px;
+margin-bottom: 1vw;
+background-color: rgba(250, 250, 250);
+display: flex;
+justify-content: left;
+}
+
+.followMark {
+background-image: url('../../../image/followMark1.png');
+width: 5vw;
+height:3vw;
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+right: -1vw;
+top: 2px;
+}
+
+.unfollowMark {
+  background-image: url('../../../image/unfollowMark1.png');
+  width: 5vw;
+  height:3vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: -1vw;
+  top: 2px;
+}
+
+.preloader {
+  background-image: url('../../../image/preloader.gif');
+  width: 21vw;
+  height:16px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: flex;
+  align-self: center;
+}
+
+.preloaderNone {
+  display: none;
+}

@@ -1,0 +1,42 @@
+.wall {
+  background-color: transparent;
+  margin: 5vw 2vw 0 2vw;
+}
+
+.message {
+  font-size: 2vw;
+  padding-left: 1vw;
+  margin: 0;
+}
+
+.user {
+  width: 6vw;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  background-image: url('../../../../image/userAva.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.userWrapper {
+display: flex;
+justify-content: left;
+margin: 1vw 0;
+border: solid 1px rgba(122, 118, 113, 0.3);
+box-shadow: 1px 1px 1px 0px rgba(122, 118, 113, 0.3);
+border-radius: 10px;
+padding: 1vw;
+}
+
+.like {
+  width: 2vw;
+  height: 1.5vw;
+  display: flex;
+  align-self: center;
+}
+
+.likeWrapper {
+display: flex;
+justify-content: right;
+height: fit-content;
+}

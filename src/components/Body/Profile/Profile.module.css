@@ -1,0 +1,95 @@
+.profile {
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
+  margin: 0;
+}
+
+.profGrid {
+  margin: 1vw 2vw 5vw 20vw;
+}
+
+.image {
+  height: 25vw;
+  width: 100%;
+  background-color: rgba(122, 118, 113, 0.101);
+  background-image: url('../../../image/city.jpg');
+  background-size: contain;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 15vw;
+  height: 15vw;
+  background-image: url('../../../image/avatar.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -7.5vw;
+  left: 2vw;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.profileText {
+  font-size: 2vw;
+  color: black;
+  margin: 1vw;
+  padding: 0;
+}
+
+.userName {
+  font-family: Arial, sans-serif;
+  font-size: 3vw;
+  color: black;
+  margin: 1vw 1vw;
+  padding: 0;
+}
+
+.slogan {
+  font-family: Arial, sans-serif;
+  font-size: 1.5vw;
+  color: black;
+  margin: 1vw 1vw;
+  padding: 0;
+}
+
+
+.line {
+  margin: o auto;
+  height: 1vw;
+  background-color: rgba(122, 118, 113, 0.3);
+}
+
+.input {
+  border: solid 1px rgba(122, 118, 113, 0.3);
+  box-shadow: 1px 1px 1px 0px rgba(122, 118, 113, 0.3);
+  border-radius: 10px;
+}
+
+.button {
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  border-width: 0;
+  background-image: url('https://catherineasquithgallery.com/uploads/posts/2021-02/1613323933_189-p-kruglii-sinii-fon-225.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  color:rgb(31, 65, 133);
+  font-size: 1vw;
+  line-height: 5vw;
+  cursor: pointer;
+  margin-left: 1vw;
+}
+
+.wrapperText {
+  display: flex;
+  justify-content: left;
+  padding: 2vw;
+}

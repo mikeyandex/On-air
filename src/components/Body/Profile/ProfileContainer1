@@ -1,0 +1,18 @@
+import { connect } from 'react-redux'
+import { addPost, postChange, setProfile } from '../../../redux/profileReducer'
+import Profile from './Profile'
+
+let mapStateToProps = (state) => {
+  return {
+    wPage: state.wallPage.wallData,
+    textAreaValue: state.wallPage.textAreaValue,
+    profileData: state.wallPage.profile.data,
+    topImage: state.wallPage.topImage,
+  }
+}
+
+export default connect(mapStateToProps, {
+  postChange,
+  addPost,
+  setProfile,
+})(Profile)

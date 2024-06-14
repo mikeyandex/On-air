@@ -1,6 +1,8 @@
 import React from 'react'
 import classes from './Friends.module.css'
 import userAva from '../../../image/userAva.jpg'
+import Preloader from '../../Common/Preloader/Preloader'
+import { Routes, Route, Link } from 'react-router-dom'
 
 let Friends = (props) => {
 
@@ -14,7 +16,7 @@ let Friends = (props) => {
 
   return (
     <div>
-
+      <Preloader isFetching={props.isFetching} />
       <div className={classes.selector}>
         {pages.map(p => {
           if (p === 1 || p === pagesCount || (p >= props.currentPage - 2 && p <= props.currentPage + 2)) {
@@ -35,29 +37,31 @@ let Friends = (props) => {
             return null;
           }
         })}
-        <div className={props.isFetching === true
-          ? classes.preloader
-          : classes.preloaderNone} />
+
       </div>
 
 
-      {props.friendsPage.map((array) => {
+      {props.friendsPage.map((user) => {
 
         return (
-          <div className={classes.list} key={array.id}>
-            <img className={classes.icon} src={array.photos.large != null ? array.photos.small : userAva} />
+          <div className={classes.list} key={user.id}>
+            <Link to={'/profile/' + user.id}>
+              <img className={classes.icon} src={user.photos.large != null 
+              ? user.photos.small 
+              : userAva} />
+            </Link>
             <div className={classes.wrapper}>
-              <p className={classes.user}>{array.name}</p>
+              <p className={classes.user}>{user.name}</p>
 
-              <div className={array.followed === true
+              <div className={user.followed === true
                 ? classes.followMark
                 : classes.unfollowMark} />
 
-              <p className={classes.slogan}>{array.status}</p>
+              <p className={classes.slogan}>{user.status}</p>
 
-              {array.followed === true
-                ? <button className={classes.button} onClick={() => props.onUnFollowClick(array.id)}>UNFOLLOW</button>
-                : <button className={classes.button} onClick={() => props.onFollowClick(array.id)}>FOLLOW</button>}
+              {user.followed === true
+                ? <button className={classes.button} onClick={() => props.onUnFollowClick(user.id)}>UNFOLLOW</button>
+                : <button className={classes.button} onClick={() => props.onFollowClick(user.id)}>FOLLOW</button>}
             </div>
           </div>
         )

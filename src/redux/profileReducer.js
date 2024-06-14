@@ -1,9 +1,13 @@
 const CREATE_POST = 'CREATE_POST'
 const ADD_POST_TEXT = 'ADD_POST_TEXT'
+const SET_PROFILE = 'SET_PROFILE'
+const SET_TOP_IMAGE = 'SET_TOP_IMAGE '
 
 const initialState = {
   wallData: [],
   textAreaValue: '',
+  profile: [],
+  topImage: 'https://cdnb.artstation.com/p/assets/images/images/008/512/123/large/vitali-timkin-anythin-city-vitali-timkin1.jpg'
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -26,17 +30,22 @@ const profileReducer = (state = initialState, action) => {
         textAreaValue: action.text,
       }
 
+    case 'SET_PROFILE':
+      return { ...state, profile: action.profile }
+
     default:
       return state
   }
 }
 
 
-export const addPostActionCreator = () => ({ type: CREATE_POST, })
+export const addPost = () => ({ type: CREATE_POST, })
 
-export const postChangeActionCreator = (text) => ({
+export const postChange = (text) => ({
   type: ADD_POST_TEXT,
   text: text,
 })
+
+export const setProfile = (profile) => ({ type: SET_PROFILE, profile })
 
 export default profileReducer

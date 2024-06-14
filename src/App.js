@@ -20,7 +20,7 @@ const App = () => {
 
       <div>
         <Routes>
-          <Route path='/Profile' element={<ProfileContainer />} />
+          <Route path='/Profile/:profileID?' element={<ProfileContainer />} />
           <Route path='/Posts' element={<PostsContainer />} />
           <Route path='/Friends' element={<FriendsContainer />} />
           <Route path='/News' element={<News />} />

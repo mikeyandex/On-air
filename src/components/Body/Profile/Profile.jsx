@@ -7,18 +7,18 @@ const Profile = (props) => {
 
   const onPostChange = (event) => {
     let text = event.target.value
-    props.onPostChange(text)
+    props.postChange(text)
   }
 
   const onAddPost = () => {
-    props.onAddPost()
+    props.addPost()
   }
 
   let wallArray = props.wPage.map(wall => <WallCell like={wall.like} message={wall.message} id={wall.id} key={wall.id} />)
 
   return (
     <div className={classes.profile}>
-      <ProfileInfo />
+      <ProfileInfo profileData={props.profileData} topImage={props.topImage} />
       <div className={classes.wrapperText}>
       
         <textarea className={classes.input} onChange={onPostChange} value={props.textAreaValue} rows="2" cols="33" placeholder='Введите сообщение' />

@@ -17,7 +17,6 @@ class ProfileContainer extends React.Component {
     }
     axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + profileID).then(response => {
       this.props.setProfile(response)
-      console.log(this.props)
     })
   }
 
@@ -29,6 +28,7 @@ class ProfileContainer extends React.Component {
       textAreaValue={this.props.textAreaValue}
       profileData={this.props.profileData}
       topImage={this.props.topImage}
+      setTopImage={this.props.setTopImage}
     />
   }
 }

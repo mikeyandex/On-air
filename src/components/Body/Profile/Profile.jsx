@@ -18,9 +18,9 @@ const Profile = (props) => {
 
   return (
     <div className={classes.profile}>
-      <ProfileInfo profileData={props.profileData} topImage={props.topImage} />
+      <ProfileInfo profileData={props.profileData} topImage={props.topImage} setTopImage={props.setTopImage} />
       <div className={classes.wrapperText}>
-      
+
         <textarea className={classes.input} onChange={onPostChange} value={props.textAreaValue} rows="2" cols="33" placeholder='Введите сообщение' />
 
         <button onClick={onAddPost} className={classes.button}></button>

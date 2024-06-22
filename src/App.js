@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
-import Header from './components/Header/Header'
+import HeaderContainer from './components/Header/HeaderContainer'
 import Nav from './components/Nav/Nav'
 import ProfileContainer from './components/Body/Profile/ProfileContainer'
 import News from './components/Body/News/News'
@@ -15,7 +15,7 @@ const App = () => {
   return (
 
     <div className='app-wrapper'>
-      <Header />
+      <HeaderContainer />
       <Nav />
 
       <div>

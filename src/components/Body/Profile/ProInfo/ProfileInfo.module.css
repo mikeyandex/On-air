@@ -5,8 +5,9 @@
 }
 
 .profGrid {
-  margin: 1vw 2vw 5vw 1vw;
+  margin: 1vw 2vw 1vw 1vw;
   position: relative;
+  height: 18vw;
 }
 
 .image {
@@ -66,9 +67,42 @@
   padding: 0;
 }
 
+.source {
+  font-family: Arial, sans-serif;
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: black;
+  margin: 1vw 0;
+  padding: 0;
+  display: inline-block;
+  width: 8vw;
+}
+
+.link {
+  font-family: Arial, sans-serif;
+  font-size: 1.5vw;
+  font-weight: normal;
+  color: black;
+  margin: 1vw ;
+  padding: 0;
+  display: inline-block;
+  text-decoration: none;
+}
+
 
 .line {
   margin: o auto;
   height: 1vw;
   background-color: rgba(122, 118, 113, 0.3);
 }
+
+.textAreaNo {
+visibility: 0;
+}
+
+.textAreaYes {
+  visibility: 1;
+  position: absolute;
+  top: 15vw;
+  right: 1vw;
+  }

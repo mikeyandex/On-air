@@ -1,15 +1,16 @@
 .header {
   grid-area: header;
-  background-color:rgb(250, 250, 250);
-  height: min-content;
+  background-color: rgb(250, 250, 250);
+  height: 5vw;
   border-radius: 10px;
   display: flex;
-  justify-content: left;
-  padding: 1vw;
+  justify-content: space-between;
+  padding: 0 1vw;
 }
 
 .logo {
   width: 5vw;
+  height: 5vw;
   background-image: url('../../image/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -18,10 +19,31 @@
 
 .logoText {
   font-size: 3vw;
-  font-weight:bolder;
+  font-weight: bolder;
+  line-height: 3vw;
+  display: block;
+  margin: 0 1vw;
+  color: rgb(31, 65, 133);
+  align-self: center;
+}
+
+.user {
+  font-size: 1.5vw;
+  font-weight: bold;
   line-height: 3vw;
   display: block;
   margin: 0;
-  color:rgb(31, 65, 133);
-  align-self:stretch;
+  padding: 0;
+  align-self: center;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userWrapper {
+  display: flex;
+  text-decoration: none;
+  color: rgb(31, 65, 133);
 }

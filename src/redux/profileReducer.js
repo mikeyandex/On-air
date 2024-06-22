@@ -1,7 +1,6 @@
 const CREATE_POST = 'CREATE_POST'
 const ADD_POST_TEXT = 'ADD_POST_TEXT'
 const SET_PROFILE = 'SET_PROFILE'
-const SET_TOP_IMAGE = 'SET_TOP_IMAGE '
 
 const initialState = {
   wallData: [],

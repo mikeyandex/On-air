@@ -19,7 +19,7 @@ const authReducer = (state = initialState, action) => {
         isAuth: true,
       }
 
-      case 'SSET_IS_FETCHING':
+      case 'SET_IS_FETCHING':
         return { ...state,  isFetching: action. isFetching }
 
     default:

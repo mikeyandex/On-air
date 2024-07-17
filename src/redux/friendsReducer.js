@@ -4,13 +4,15 @@ const SET_USERS = 'SET_USERS'
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT'
 const SET_IS_FETCHING = 'SET_IS_FETCHING'
+const SET_IS_FOLLOWING = 'SET_IS_FOLLOWING'
 
 const initialState = {
   friendsPage: [],
   pageSize: 5,
   totalCount: 1,
-  currentPage: 5,
+  currentPage: 1,
   isFetching: false,
+  isFollowing: [],
 }
 
 const friendsReducer = (state = initialState, action) => {
@@ -26,6 +28,7 @@ const friendsReducer = (state = initialState, action) => {
           return user
         })],
       }
+
       break
 
     case 'UNFOLLOW':
@@ -51,7 +54,15 @@ const friendsReducer = (state = initialState, action) => {
       return { ...state, totalCount: action.totalCount }
 
     case 'SET_IS_FETCHING':
-      return { ...state,  isFetching: action. isFetching }
+      return { ...state, isFetching: action.isFetching }
+
+    case 'SET_IS_FOLLOWING':
+      return {
+        ...state, isFollowing:
+          action.isFollowing
+            ? [...state.isFollowing, action.userID]
+            : [state.isFollowing.filter(id => id != action.userID)]
+      }
 
     default:
       return state
@@ -67,8 +78,10 @@ export const setUsers = (users) => ({ type: SET_USERS, users: users })
 
 export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage })
 
-export const setTotalCount = (totalCount) => ({ type: SET_TOTAL_COUNT, totalCount})
+export const setTotalCount = (totalCount) => ({ type: SET_TOTAL_COUNT, totalCount })
 
-export const setIsFetching = (isFetching) => ({ type: SET_IS_FETCHING, isFetching})
+export const setIsFetching = (isFetching) => ({ type: SET_IS_FETCHING, isFetching })
+
+export const setIsFollowing = (isFollowing, userID) => ({ type: SET_IS_FOLLOWING, isFollowing, userID })
 
 export default friendsReducer

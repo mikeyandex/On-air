@@ -1,6 +1,6 @@
 import FriendsAPI from './FriendsAPI'
 import { connect } from 'react-redux'
-import { onFollowClick, onUnFollowClick, setUsers, setCurrentPage, setTotalCount, setIsFetching } from '../../../redux/friendsReducer'
+import { onFollowClick, onUnFollowClick, setUsers, setCurrentPage, setTotalCount, setIsFetching, setIsFollowing } from '../../../redux/friendsReducer'
 
 let mapStateToProps = (state) => {
   return {
@@ -17,7 +17,8 @@ const FriendsContainer = connect(mapStateToProps, {
   setUsers,
   setTotalCount,
   setCurrentPage,
-  setIsFetching
+  setIsFetching,
+  setIsFollowing
 })
   (FriendsAPI)
 

@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom'
 import Preloader from '../Common/Preloader/Preloader'
 
 const Header = (props) => {
-  debugger
   return (
     <header className={classes.header}>
       <Preloader isFetching={props.isFetching} />

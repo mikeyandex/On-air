@@ -2,20 +2,20 @@ import React from 'react'
 import classes from './Friends.module.css'
 import userAva from '../../../image/userAva.jpg'
 import Preloader from '../../Common/Preloader/Preloader'
+import userAPI from '../../../api/api'
 import { Routes, Route, Link } from 'react-router-dom'
 
 let Friends = (props) => {
-
   let pagesCount = Math.ceil(props.totalCount / props.pageSize)
 
-  let pages = []
+  let pages = []//Создаю массив юзеров
 
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i)
   }
 
   return (
-    <div>
+    <div className={classes.container}>
       <Preloader isFetching={props.isFetching} />
       <div className={classes.selector}>
         {pages.map(p => {
@@ -39,35 +39,50 @@ let Friends = (props) => {
         })}
 
       </div>
-
-
       {props.friendsPage.map((user) => {
+        const unfollowUser = () => {
+          props.setIsFollowing(true, user.id)
+          props.setIsFetching(true)
+          userAPI.unfollowUser(user.id).then(data => {
+            if (data.resultCode == 0) {
+              props.onUnFollowClick(user.id)
+              props.setIsFollowing(false, user.id)
+              props.setIsFetching(false)
+            }
+          })
 
+        }
+        const followUser = () => {
+          props.setIsFollowing(true, user.id)
+          props.setIsFetching(true)
+          userAPI.followUser(user.id).then(data => {
+            if (data.resultCode == 0) {
+              props.onFollowClick(user.id)
+              props.setIsFollowing(false, user.id)
+              props.setIsFetching(false)
+            }
+          })
+
+        }
         return (
           <div className={classes.list} key={user.id}>
             <Link to={'/profile/' + user.id}>
-              <img className={classes.icon} src={user.photos.large != null 
-              ? user.photos.small 
-              : userAva} />
+              <img className={classes.icon} src={user.photos.large != null
+                ? user.photos.small
+                : userAva} />
             </Link>
             <div className={classes.wrapper}>
               <p className={classes.user}>{user.name}</p>
-
-              <div className={user.followed === true
-                ? classes.followMark
-                : classes.unfollowMark} />
-
               <p className={classes.slogan}>{user.status}</p>
-
               {user.followed === true
-                ? <button className={classes.button} onClick={() => props.onUnFollowClick(user.id)}>UNFOLLOW</button>
-                : <button className={classes.button} onClick={() => props.onFollowClick(user.id)}>FOLLOW</button>}
+                ? <button className={classes.buttonUnfollow} onClick={unfollowUser} disabled={props.isFollowing.some(id => id === user.id)}>ОТПИСАТЬСЯ</button>
+                : <button className={classes.buttonFollow} onClick={followUser} disabled={props.isFollowing.some(id => id === user.id)} >ПОДПИСАТЬСЯ</button>}
             </div>
           </div>
         )
       })
       }
-    </div>
+    </div >
   )
 }
 

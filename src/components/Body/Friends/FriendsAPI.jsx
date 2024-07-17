@@ -1,16 +1,16 @@
 import React from 'react'
-import axios from 'axios'
 import Friends from './Friends'
+import userAPI from '../../../api/api'
 
 class FriendsAPI extends React.Component {
 
   componentDidMount() {
     if (this.props.friends.friendsPage.length === 0) {
       //before
-      this.props.setIsFetching(true)
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${this.props.currentPage}`).then(response => {
-        this.props.setUsers(response.data.items)
-        this.props.setTotalCount(response.data.totalCount)
+      this.props.setIsFetching(true)      
+      userAPI.getUser(this.props.pageSize, this.props.currentPage).then(data => {
+        this.props.setUsers(data.items)
+        this.props.setTotalCount(data.totalCount)
         //after
         this.props.setIsFetching(false)
       })
@@ -19,10 +19,10 @@ class FriendsAPI extends React.Component {
 
   onSelectorClick = (pageNumber) => {
     //before  
-    this.props.setIsFetching(true)  
+    this.props.setIsFetching(true)
     this.props.setCurrentPage(pageNumber)
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}`).then(response => {
-      this.props.setUsers(response.data.items)
+    userAPI.getUser(this.props.pageSize, pageNumber).then(data => {
+      this.props.setUsers(data.items)
     })
     //after
     this.props.setIsFetching(false)
@@ -33,7 +33,9 @@ class FriendsAPI extends React.Component {
       totalCount={this.props.friends.totalCount} pageSize={this.props.friends.pageSize}
       currentPage={this.props.currentPage}
       isFetching={this.props.friends.isFetching}
+      isFollowing={this.props.friends.isFollowing}
       setIsFetching={this.props.setIsFetching}
+      setIsFollowing={this.props.setIsFollowing}
       onSelectorClick={this.onSelectorClick}
       friendsPage={this.props.friends.friendsPage}
       onFollowClick={this.props.onFollowClick}

@@ -9,14 +9,13 @@
 }
 
 .image {
-  height: 25vw;
+  height: 20vw;
   width: 100%;
   background-color: rgba(122, 118, 113, 0.101);
   background-size: contain;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .imageWrapper {

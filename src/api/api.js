@@ -39,6 +39,15 @@ const userAPI = {
     )
   },
 
+  getProfile(profileID) {return instance.get(`profile/${profileID}`)
+  },
+
 }
+
+const authAPI = {
+  authMeAPI() {
+    return instance.get(`auth/me`)}
+}
+
 
 export default userAPI

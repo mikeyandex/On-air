@@ -2,7 +2,6 @@ import React from 'react'
 import classes from './Friends.module.css'
 import userAva from '../../../image/userAva.jpg'
 import Preloader from '../../Common/Preloader/Preloader'
-import userAPI from '../../../api/api'
 import { Routes, Route, Link } from 'react-router-dom'
 
 let Friends = (props) => {
@@ -13,6 +12,7 @@ let Friends = (props) => {
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i)
   }
+  pages.reverse ()
 
   return (
     <div className={classes.container}>
@@ -36,34 +36,21 @@ let Friends = (props) => {
           } else {
             return null;
           }
-        })}
+        }
+        )
+        }
 
       </div>
+      
       {props.friendsPage.map((user) => {
-        const unfollowUser = () => {
-          props.setIsFollowing(true, user.id)
-          props.setIsFetching(true)
-          userAPI.unfollowUser(user.id).then(data => {
-            if (data.resultCode == 0) {
-              props.onUnFollowClick(user.id)
-              props.setIsFollowing(false, user.id)
-              props.setIsFetching(false)
-            }
-          })
 
-        }
         const followUser = () => {
-          props.setIsFollowing(true, user.id)
-          props.setIsFetching(true)
-          userAPI.followUser(user.id).then(data => {
-            if (data.resultCode == 0) {
-              props.onFollowClick(user.id)
-              props.setIsFollowing(false, user.id)
-              props.setIsFetching(false)
-            }
-          })
-
+          props.follow(user.id)
         }
+        const unfollowUser = () => {
+          props.unfollow(user.id)
+        }
+
         return (
           <div className={classes.list} key={user.id}>
             <Link to={'/profile/' + user.id}>

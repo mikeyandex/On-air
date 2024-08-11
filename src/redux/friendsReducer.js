@@ -1,3 +1,5 @@
+import userAPI from '../api/api'
+
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
@@ -69,6 +71,57 @@ const friendsReducer = (state = initialState, action) => {
   }
 }
 
+export const getUsers = (pageSize, currentPage, friendsPageLength) => {
+  return (dispatch) => {
+    if (friendsPageLength === 0) {
+      dispatch(setIsFetching(true))
+      dispatch(setCurrentPage(currentPage))
+      userAPI.getUser(pageSize, currentPage).then(data => {
+        dispatch(setUsers(data.items))
+        dispatch(setTotalCount(data.totalCount))
+        dispatch(setIsFetching(false))
+      })
+    }
+  }
+}
+
+export const getPage = (pageSize, pageNumber) => {
+  return (dispatch) => {
+    dispatch(setIsFetching(true))
+    dispatch(setCurrentPage(pageNumber))
+    userAPI.getUser(pageSize, pageNumber).then(data => {
+      dispatch(setUsers(data.items))
+    })
+    dispatch(setIsFetching(false))
+  }
+}
+
+export const follow = (userId) => {
+  return (dispatch) => {
+    dispatch(setIsFollowing(true, userId))
+    dispatch(setIsFetching(true))
+    userAPI.followUser(userId).then(data => {
+      if (data.resultCode === 0) {
+        dispatch(onFollowClick(userId))
+        dispatch(setIsFollowing(false, userId))
+        dispatch(setIsFetching(false))
+      }
+    })
+  }
+}
+
+export const unfollow = (userId) => {
+  return (dispatch) => {
+    dispatch(setIsFetching(true))
+    userAPI.unfollowUser(userId).then(data => {
+      if (data.resultCode === 0) {
+        dispatch(onUnFollowClick(userId))
+        dispatch(setIsFollowing(false, userId))
+        dispatch(setIsFetching(false))
+      }
+    })
+  }
+}
 
 export const onFollowClick = (id) => ({ type: FOLLOW, userID: id })
 

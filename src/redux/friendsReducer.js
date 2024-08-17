@@ -10,7 +10,7 @@ const SET_IS_FOLLOWING = 'SET_IS_FOLLOWING'
 
 const initialState = {
   friendsPage: [],
-  pageSize: 5,
+  pageSize: 10,
   totalCount: 1,
   currentPage: 1,
   isFetching: false,

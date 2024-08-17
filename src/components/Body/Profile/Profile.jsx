@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import WallCell from './WallCell/WallCell'
 import classes from './Profile.module.css'
 import ProfileInfo from './ProInfo/ProfileInfo'
 
 const Profile = (props) => {
+
+  let navigate = useNavigate()
+  
+  useEffect(() => {
+    if (props.isAuth === false) {
+      return navigate("/Login")
+    }
+  }, [props.isAuth])
 
   const onPostChange = (event) => {
     let text = event.target.value

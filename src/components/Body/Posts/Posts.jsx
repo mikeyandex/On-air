@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import classes from './Posts.module.css'
 import Dialog from './Dialog/Dialog'
 import Message from './Message/Message'
 
 const Posts = (props) => {
+
+  let navigate = useNavigate()
+  
+  useEffect(() => {
+    if (props.isAuth === false) {
+      return navigate("/Login")
+    }
+  }, [props.isAuth])
 
   let dialogsArray = props.dPage.map(dialog => <Dialog user={dialog.user} key={dialog.id} id={dialog.id} />)
 

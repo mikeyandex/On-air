@@ -23,6 +23,7 @@ class ProfileContainer extends React.Component {
       profileData={this.props.profileData}
       topImage={this.props.topImage}
       setTopImage={this.props.setTopImage}
+      isAuth={this.props.isAuth}
     />
   }
 }
@@ -35,8 +36,10 @@ let mapStateToProps = (state) => {
     textAreaValue: state.wallPage.textAreaValue,
     profileData: state.wallPage.profile.data,
     topImage: state.wallPage.topImage,
+    isAuth: state.auth.isAuth,
   }
 }
+
 
 
 function withRouter(ProfileContainer) {

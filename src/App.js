@@ -9,6 +9,7 @@ import Settings from './components/Body/Settings/Settings'
 import FriendsContainer from './components/Body/Friends/FriendsContainer'
 import './App.css'
 import PostsContainer from './components/Body/Posts/PostsContainer'
+import Login from './components/Body/Login/Login'
 
 const App = () => {
 
@@ -26,6 +27,7 @@ const App = () => {
           <Route path='/News' element={<News />} />
           <Route path='/Music' element={<MusicContainer />} />
           <Route path='/Settings' element={<Settings />} />
+          <Route path='/Login' element={<Login />} />
         </Routes>
       </div>
     </div>

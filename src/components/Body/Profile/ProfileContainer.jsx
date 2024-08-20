@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Profile from './Profile'
 import { addPost, postChange, setProfile, getProfile } from '../../../redux/profileReducer'
 import { connect } from 'react-redux'
@@ -8,27 +8,33 @@ import {
   useParams,
 } from "react-router-dom"
 
-class ProfileContainer extends React.Component {
-  componentDidMount() {
-    this.props.getProfile(this.props.router.params.profileID)
-  }
+const ProfileContainer = (props) => {
+  
+  useEffect(() => {
+    props.getProfile(props.router.params.profileID)
+  }, [])
 
-  render() {
-    return <Profile
-      postChange={this.props.postChange
+  let navigate = useNavigate()
+
+  useEffect(() => {
+    if (!props.isAuth) {
+      return navigate("/Login")
+    }
+  }, [props.isAuth])
+
+  return (
+    <Profile
+      postChange={props.postChange
       }
-      addPost={this.props.addPost}
-      wPage={this.props.wPage}
-      textAreaValue={this.props.textAreaValue}
-      profileData={this.props.profileData}
-      topImage={this.props.topImage}
-      setTopImage={this.props.setTopImage}
-      isAuth={this.props.isAuth}
+      addPost={props.addPost}
+      wPage={props.wPage}
+      textAreaValue={props.textAreaValue}
+      profileData={props.profileData}
+      topImage={props.topImage}
+      setTopImage={props.setTopImage}
     />
-  }
+  )
 }
-
-
 
 let mapStateToProps = (state) => {
   return {
@@ -39,7 +45,6 @@ let mapStateToProps = (state) => {
     isAuth: state.auth.isAuth,
   }
 }
-
 
 
 function withRouter(ProfileContainer) {

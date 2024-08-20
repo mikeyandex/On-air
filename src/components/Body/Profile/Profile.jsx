@@ -6,14 +6,6 @@ import ProfileInfo from './ProInfo/ProfileInfo'
 
 const Profile = (props) => {
 
-  let navigate = useNavigate()
-  
-  useEffect(() => {
-    if (props.isAuth === false) {
-      return navigate("/Login")
-    }
-  }, [props.isAuth])
-
   const onPostChange = (event) => {
     let text = event.target.value
     props.postChange(text)

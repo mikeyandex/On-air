@@ -1,6 +1,7 @@
-import Posts from './Posts'
 import { messageChangeActionCreator, addMessageActionCreator } from '../../../redux/messageReducer'
 import { connect } from 'react-redux'
+import WithAuthRedirect from '../../../HOC/WithAuthRedirect'
+import Posts from './Posts'
 
 let mapStateToProps = (state) => {
   return {
@@ -24,7 +25,8 @@ let mapDispatchToProps = (dispatch) => {
   }
 }
 
-const PostsContainer = connect(mapStateToProps, mapDispatchToProps)(Posts)
+let AuthRedirectComponent = WithAuthRedirect(Posts)
 
+const PostsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent)
 
 export default PostsContainer

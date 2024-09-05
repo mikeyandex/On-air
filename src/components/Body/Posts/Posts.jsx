@@ -6,14 +6,6 @@ import Message from './Message/Message'
 
 const Posts = (props) => {
 
-  let navigate = useNavigate()
-  
-  useEffect(() => {
-    if (props.isAuth === false) {
-      return navigate("/Login")
-    }
-  }, [props.isAuth])
-
   let dialogsArray = props.dPage.map(dialog => <Dialog user={dialog.user} key={dialog.id} id={dialog.id} />)
 
   let messagesArray = props.mData.map(message => <Message text={message.text} key={message.id} id={message.id} />)

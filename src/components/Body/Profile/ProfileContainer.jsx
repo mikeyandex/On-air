@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Profile from './Profile'
 import { addPost, postChange, setProfile, getProfile } from '../../../redux/profileReducer'
 import { connect } from 'react-redux'
+import WithAuthRedirect from '../../../HOC/WithAuthRedirect'
 import {
   useLocation,
   useNavigate,
@@ -13,14 +14,6 @@ const ProfileContainer = (props) => {
   useEffect(() => {
     props.getProfile(props.router.params.profileID)
   }, [])
-
-  let navigate = useNavigate()
-
-  useEffect(() => {
-    if (!props.isAuth) {
-      return navigate("/Login")
-    }
-  }, [props.isAuth])
 
   return (
     <Profile
@@ -42,18 +35,29 @@ let mapStateToProps = (state) => {
     textAreaValue: state.wallPage.textAreaValue,
     profileData: state.wallPage.profile.data,
     topImage: state.wallPage.topImage,
-    isAuth: state.auth.isAuth,
+    //isAuth: state.auth.isAuth,
   }
 }
 
 
-function withRouter(ProfileContainer) {
+
+let AuthRedirectComponent = WithAuthRedirect(ProfileContainer)
+
+let mapStateToPropsRedirect = (state) => {
+  return{
+    isAuth: state.auth.isAuth,
+  }
+}
+
+AuthRedirectComponent = connect(mapStateToPropsRedirect)(AuthRedirectComponent)
+
+function withRouter(AuthRedirectComponent) {
   function ComponentWithRouterProp(props) {
     let location = useLocation();
     let navigate = useNavigate();
     let params = useParams();
     return (
-      <ProfileContainer
+      <AuthRedirectComponent
         {...props}
         router={{ location, navigate, params }}
       />
@@ -63,10 +67,13 @@ function withRouter(ProfileContainer) {
   return ComponentWithRouterProp;
 }
 
+
+
 export default connect(mapStateToProps, {
   postChange,
   addPost,
   setProfile,
   getProfile,
-})(withRouter(ProfileContainer))
+})(withRouter(AuthRedirectComponent))
+
 

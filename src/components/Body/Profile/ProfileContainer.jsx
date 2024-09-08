@@ -10,7 +10,6 @@ import {
 } from "react-router-dom"
 
 const ProfileContainer = (props) => {
-  
   useEffect(() => {
     props.getProfile(props.router.params.profileID)
   }, [])
@@ -35,21 +34,10 @@ let mapStateToProps = (state) => {
     textAreaValue: state.wallPage.textAreaValue,
     profileData: state.wallPage.profile.data,
     topImage: state.wallPage.topImage,
-    //isAuth: state.auth.isAuth,
   }
 }
-
-
 
 let AuthRedirectComponent = WithAuthRedirect(ProfileContainer)
-
-let mapStateToPropsRedirect = (state) => {
-  return{
-    isAuth: state.auth.isAuth,
-  }
-}
-
-AuthRedirectComponent = connect(mapStateToPropsRedirect)(AuthRedirectComponent)
 
 function withRouter(AuthRedirectComponent) {
   function ComponentWithRouterProp(props) {
@@ -66,8 +54,6 @@ function withRouter(AuthRedirectComponent) {
 
   return ComponentWithRouterProp;
 }
-
-
 
 export default connect(mapStateToProps, {
   postChange,

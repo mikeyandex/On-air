@@ -1,21 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './Header'
 import { setAuthData, setIsFetching, authMe } from '../../redux/authReducer'
 import { connect } from 'react-redux'
 
-class HeaderContainer extends React.Component {
-  componentDidMount() {
-    this.props.authMe()
-  }
+const HeaderContainer = (props) => {
+  useEffect(() => {
+    props.authMe()
+  }, [])
 
-  render() {
-    return <Header
-      login={this.props.login}
-      isAuth={this.props.isAuth}
-      setAuthData={this.props.setAuthData}
-      setIsFetching={this.props.setIsFetching}
+  return (
+    <Header
+      login={props.login}
+      isAuth={props.isAuth}
+      setAuthData={props.setAuthData}
+      setIsFetching={props.setIsFetching}
     />
-  }
+  )
 }
 
 let mapStateToProps = (state) => {

@@ -5,6 +5,7 @@ import Preloader from '../../Common/Preloader/Preloader'
 import { Routes, Route, Link } from 'react-router-dom'
 
 let Friends = (props) => {
+  console.log(props)
   let pagesCount = Math.ceil(props.totalCount / props.pageSize)
 
   let pages = []//Создаю массив юзеров

@@ -1,14 +1,15 @@
-import userAPI from '../api/api'
+import { profileAPI, userAPI } from '../api/api'
 
 const CREATE_POST = 'CREATE_POST'
 const ADD_POST_TEXT = 'ADD_POST_TEXT'
 const SET_PROFILE = 'SET_PROFILE'
+const SET_STATUS = 'SET_STATUS'
 
 const initialState = {
   wallData: [],
   textAreaValue: '',
+  status: 'status',
   profile: [],
-  topImage: 'https://cdnb.artstation.com/p/assets/images/images/008/512/123/large/vitali-timkin-anythin-city-vitali-timkin1.jpg'
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -31,6 +32,12 @@ const profileReducer = (state = initialState, action) => {
         textAreaValue: action.text,
       }
 
+    case 'ADD_POST_TEXT':
+      return {
+        ...state,
+        state: action.status,
+      }
+
     case 'SET_PROFILE':
       return { ...state, profile: action.profile }
 
@@ -51,12 +58,34 @@ export const getProfile = (ID) => {
   }
 }
 
+export const getStatus = (profileID) => {
+  return (dispatch) => {
+    profileAPI.getStatus(profileID).then(response => {
+      dispatch(setStatus(response))
+    })
+  }
+}
+
+export const updateStatus = (status) => {
+  return (dispatch) => {
+    profileAPI.updateStatus(response => {
+      if (response.data.resultCode) {
+        dispatch(setStatus(status))
+      }
+    })
+  }
+}
 
 export const addPost = () => ({ type: CREATE_POST, })
 
 export const postChange = (text) => ({
   type: ADD_POST_TEXT,
   text: text,
+})
+
+export const setStatus = (status) => ({
+  type: SET_STATUS,
+  text: status,
 })
 
 export const setProfile = (profile) => ({ type: SET_PROFILE, profile })

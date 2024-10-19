@@ -6,7 +6,7 @@ const instance = axios.create({
   baseURL: 'https://social-network.samuraijs.com/api/1.0/',
 })
 
-const userAPI = {
+export const userAPI = {
   getUser(pageSize = 5, currentPage = 1) {
     return instance.get(`users?count=${pageSize}&page=${currentPage}`).then(
       response => {
@@ -31,6 +31,25 @@ const userAPI = {
     )
   },
 
+  getProfile(profileID) {
+    console.warn('Obsolete method. Please use profileAPI')
+    return profileAPI.getProfile(profileID)
+  },
+}
+
+export const profileAPI = {
+  getProfile(profileID) {
+    return instance.get(`profile/${profileID}`)
+  },
+  getStatus(profileID) {
+    return instance.get(`profile/status/${profileID}`)
+  },
+  updateStatus(status) {
+    return instance.put('profile/status/', {status: status})
+  },
+}
+
+export const authAPI = {
   authMe() {
     return instance.get(`auth/me`).then(
       response => {
@@ -38,16 +57,4 @@ const userAPI = {
       }
     )
   },
-
-  getProfile(profileID) {return instance.get(`profile/${profileID}`)
-  },
-
 }
-
-const authAPI = {
-  authMeAPI() {
-    return instance.get(`auth/me`)}
-}
-
-
-export default userAPI

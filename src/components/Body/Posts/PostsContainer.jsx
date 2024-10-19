@@ -25,13 +25,7 @@ let mapDispatchToProps = (dispatch) => {
     },
   }
 }
- 
 
-/*
-let AuthRedirectComponent = WithAuthRedirect(Posts)
-
-const PostsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent)
-*/
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   WithAuthRedirect

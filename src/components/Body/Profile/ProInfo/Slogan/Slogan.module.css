@@ -1,0 +1,25 @@
+.slogan {
+  font-family: Arial, sans-serif;
+  font-size: 1.5vw;
+  font-weight:normal;
+  font-style: italic;
+  color: black;
+  margin: 1vw;
+  padding: 0;
+}
+
+.inputField {
+  all: unset;
+  font-family: Arial, sans-serif;
+  font-size: 1.5vw;
+  font-weight:normal;
+  font-style: italic;
+  color: black;
+  margin: 0 0 0 1vw;
+  padding: 0;
+  border: 1px solid grey;
+}
+
+.invisible {
+  display: none;
+}

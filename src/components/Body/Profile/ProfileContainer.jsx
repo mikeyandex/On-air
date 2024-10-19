@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Profile from './Profile'
-import { addPost, postChange, setProfile, getProfile } from '../../../redux/profileReducer'
+import { addPost, postChange, setProfile, getProfile, getStatus, setStatus, updateStatus } from '../../../redux/profileReducer'
 import { connect } from 'react-redux'
 import WithAuthRedirect from '../../../HOC/WithAuthRedirect'
 import {
@@ -11,9 +11,11 @@ import {
 import { compose } from 'redux'
 
 const ProfileContainer = (props) => {
-  
+  let userid = props.router.params.profileID
+
   useEffect(() => {
-    props.getProfile(props.router.params.profileID)
+    props.getProfile(userid)
+    props.getStatus(userid)
   }, [])
 
   return (
@@ -24,8 +26,9 @@ const ProfileContainer = (props) => {
       wPage={props.wPage}
       textAreaValue={props.textAreaValue}
       profileData={props.profileData}
-      topImage={props.topImage}
       setTopImage={props.setTopImage}
+      status={props.status}
+      updateStatus={props.updateStatus}
     />
   )
 }
@@ -35,14 +38,10 @@ let mapStateToProps = (state) => {
     wPage: state.wallPage.wallData,
     textAreaValue: state.wallPage.textAreaValue,
     profileData: state.wallPage.profile.data,
-    topImage: state.wallPage.topImage,
+    status: state.wallPage.status,
   }
 }
 
-
-/*
-let AuthRedirectComponent = WithAuthRedirect(ProfileContainer)
-*/
 function withRouter(AuthRedirectComponent) {
   function ComponentWithRouterProp(props) {
     let location = useLocation()
@@ -65,16 +64,12 @@ export default compose(
     addPost,
     setProfile,
     getProfile,
+    getStatus,
+    setStatus,
+    updateStatus,
   }),
   withRouter,
   WithAuthRedirect
 )(ProfileContainer)
-/*
-export default connect(mapStateToProps, {
-  postChange,
-  addPost,
-  setProfile,
-  getProfile,
-})(withRouter(AuthRedirectComponent))*/
 
 

@@ -1,4 +1,4 @@
-import authAPI from '../api/api'
+import { authAPI } from '../api/api'
 
 const SET_IS_FETCHING = 'SET_IS_FETCHING'
 const SET_AUTH_DATA = 'SET_AUTH_DATA'

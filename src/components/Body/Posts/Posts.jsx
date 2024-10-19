@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
 import classes from './Posts.module.css'
 import Dialog from './Dialog/Dialog'
 import Message from './Message/Message'

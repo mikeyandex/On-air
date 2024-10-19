@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
 import WallCell from './WallCell/WallCell'
 import classes from './Profile.module.css'
 import ProfileInfo from './ProInfo/ProfileInfo'
@@ -19,7 +18,7 @@ const Profile = (props) => {
 
   return (
     <div className={classes.profile}>
-      <ProfileInfo profileData={props.profileData} topImage={props.topImage} setTopImage={props.setTopImage} />
+      <ProfileInfo profileData={props.profileData} status={props.status} updateStatus={props.updateStatus}/>
       <div className={classes.wrapperText}>
 
         <textarea className={classes.input} onChange={onPostChange} value={props.textAreaValue} rows="2" cols="33" placeholder='Введите сообщение' />

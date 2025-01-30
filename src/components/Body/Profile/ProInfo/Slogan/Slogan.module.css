@@ -1,11 +1,11 @@
 .slogan {
   font-family: Arial, sans-serif;
-  font-size: 1.5vw;
+  font-size: 1.7vw;
   font-weight:normal;
-  font-style: italic;
+  font-style: normal;
   color: black;
   margin: 1vw;
-  padding: 0;
+  padding: 0 1vw 2vw 0;
 }
 
 .inputField {

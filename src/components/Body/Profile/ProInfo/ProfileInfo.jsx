@@ -24,19 +24,9 @@ const ProfileInfo = (props) => {
 
   const uploadRef = useRef();
 
-  //
-
   if (!props.profileData) {
     return <Preloader />
   }
-
-  /*
-          <img className={plusAppear === true
-          ? classes.imagePlus
-          : classes.imagePlusDisplayNone} 
-          onClick={handleClick} 
-          src={plus} />
-  */
 
   return (
     <div className={classes.profile}>
@@ -49,16 +39,17 @@ const ProfileInfo = (props) => {
           onDoubleClick={changeImage}
           type="url" />
         <img className={classes.image}
-         onClick={handleClick} 
-         src={topImage} />
+          onClick={handleClick}
+          src={topImage} />
 
         <img className={classes.avatar} src={props.profileData.photos.large != null
           ? props.profileData.photos.large
           : userAva} />
       </div>
+
       <div className={classes.profGrid}>
         <h3 className={classes.userName}>{props.profileData.fullName}</h3>
-        <Slogan status={props.status} />
+        <Slogan status={props.status} updateStatus={props.updateStatus} />
         <p className={classes.slogan}>{props.profileData.aboutMe}</p>
         <p className={classes.slogan}>{props.profileData.lookingForAJob
           ? 'в поиске работы'

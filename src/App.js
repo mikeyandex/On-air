@@ -9,8 +9,17 @@ import Settings from './components/Body/Settings/Settings'
 import FriendsContainer from './components/Body/Friends/FriendsContainer'
 import './App.css'
 import PostsContainer from './components/Body/Posts/PostsContainer'
-import Login from './components/Body/Login/Login'
+import Login from './components/Body/Login/Form/Login'
 
+import { useNavigate } from "react-router-dom";
+/*let navigate = useNavigate();
+
+useEffect(() => {
+   if (LoggedIn){
+      return navigate("/");
+   }
+},[LoggedIn]);*/
+         
 const App = () => {
 
   return (

@@ -18,7 +18,11 @@ const Profile = (props) => {
 
   return (
     <div className={classes.profile}>
-      <ProfileInfo profileData={props.profileData} status={props.status} updateStatus={props.updateStatus}/>
+      <ProfileInfo
+        profileData={props.profileData}
+        status={props.status}
+        updateStatus={props.updateStatus}
+        />
       <div className={classes.wrapperText}>
 
         <textarea className={classes.input} onChange={onPostChange} value={props.textAreaValue} rows="2" cols="33" placeholder='Введите сообщение' />

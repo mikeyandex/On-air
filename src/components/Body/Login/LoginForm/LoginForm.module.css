@@ -1,0 +1,48 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 1 – Изменим стили шрифтов */
+/* 2 – Удалим margin в Firefox и Safari */
+input[type="text"] {
+  font-family: inherit; /* 1 */
+  font-size: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+}
+
+.input {
+  width: 15vw;
+  height: 1vw;
+  display: block;
+  padding: 1vw 0;
+  margin: 1vw 0;
+}
+
+
+.checkbox {
+  width: 2vw;
+  height: 2vw;
+  padding: 1vw;
+  margin: 1vw 1vw 1vw 0;
+  display: inline-block;
+}
+
+.button {
+  width: 10vw;
+  height: 3vw;
+  display: block;
+}
+
+::placeholder {
+  color: grey;
+  opacity: .8;
+  line-height: 1vw;
+}
+
+input::-webkit-input-placeholder { 
+  font-size: 2vw;
+}
+
+input:-moz-placeholder {
+  font-size: 2vw;
+}

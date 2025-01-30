@@ -4,6 +4,7 @@ import messageReducer from './messageReducer'
 import friendsReducer from './friendsReducer'
 import musicReducer from './musicReducer'
 import authReducer from './authReducer'
+import { reducer as formReducer } from 'redux-form'
 
 let store = configureStore({
   reducer:
@@ -13,6 +14,7 @@ let store = configureStore({
     friendsPage: friendsReducer,
     musicPage: musicReducer,
     auth: authReducer,
+    form: formReducer,
   },
 })
 export default store

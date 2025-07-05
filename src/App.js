@@ -9,7 +9,7 @@ import Settings from './components/Body/Settings/Settings'
 import FriendsContainer from './components/Body/Friends/FriendsContainer'
 import './App.css'
 import PostsContainer from './components/Body/Posts/PostsContainer'
-import Login from './components/Body/Login/Form/Login'
+import LoginContainer from './components/Body/Login/LoginForm/LoginContainer'
 
 import { useNavigate } from "react-router-dom";
 /*let navigate = useNavigate();
@@ -36,7 +36,7 @@ const App = () => {
           <Route path='/News' element={<News />} />
           <Route path='/Music' element={<MusicContainer />} />
           <Route path='/Settings' element={<Settings />} />
-          <Route path='/Login' element={<Login />} />
+          <Route path='/Login' element={<LoginContainer />} />
         </Routes>
       </div>
     </div>

@@ -17,4 +17,5 @@ let store = configureStore({
     form: formReducer,
   },
 })
+window.store = store
 export default store

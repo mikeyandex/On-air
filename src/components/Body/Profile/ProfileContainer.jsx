@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Profile from './Profile'
-import { addPost, postChange, setProfile, getProfile, getStatus, updateStatus } from '../../../redux/profileReducer'
+import { createPost, addPostText, setProfile, getProfile, getStatus, updateStatus } from '../../../redux/profileReducer'
 import { connect } from 'react-redux'
 import WithAuthRedirect from '../../../HOC/WithAuthRedirect'
 import {
@@ -11,7 +11,7 @@ import {
 import { compose } from 'redux'
 
 const ProfileContainer = (props) => {
-  
+  console.log(props)
   useEffect(() => {
     let userid = props.router.params.profileID
     if (!userid) {
@@ -27,9 +27,9 @@ const ProfileContainer = (props) => {
 
   return (
     <Profile
-      postChange={props.postChange
+      addPostText={props.addPostText
       }
-      addPost={props.addPost}
+      createPost={props.createPost}
       wPage={props.wPage}
       textAreaValue={props.textAreaValue}
       profileData={props.profileData}
@@ -69,8 +69,8 @@ function withRouter(AuthRedirectComponent) {
 
 export default compose(
   connect(mapStateToProps, {
-    postChange,
-    addPost,
+    addPostText,
+    createPost,
     setProfile,
     getProfile,
     getStatus,

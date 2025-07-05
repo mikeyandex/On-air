@@ -1,0 +1,29 @@
+.span {
+  color: red;
+  font-size: 1.5vw;
+  margin: 1vw 0;
+  display: block;
+  position: absolute;
+  padding: 0;
+  top:3vw;
+  left: 0;
+}
+ 
+.cont {
+  position:relative;
+}
+
+.input {
+  width: 40vw;
+  min-height: fit-content;
+}
+
+:focus {
+  outline: none;
+}
+
+.inputInvalid {
+  width: 40vw;
+  min-height: fit-content;
+  border-color: red;
+}

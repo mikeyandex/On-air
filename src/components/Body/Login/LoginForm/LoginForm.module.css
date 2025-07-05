@@ -1,48 +1,70 @@
-*, *::before, *::after {
-  box-sizing: border-box;
+.span {
+  color: red;
+  font-size: 1.5vw;
+  margin: 1vw 0;
+  display: block;
+  position: absolute;
+  padding: 0;
+  top:3vw;
+  left: 0;
 }
 
-/* 1 – Изменим стили шрифтов */
-/* 2 – Удалим margin в Firefox и Safari */
-input[type="text"] {
-  font-family: inherit; /* 1 */
-  font-size: inherit; /* 1 */
-  line-height: inherit; /* 1 */
+.form {
+  padding: 1vw;
+  background-color: rgb(250, 250, 250);
+}
+
+.heading {
+  font-size: 3vw;
+  margin: 0 0 1vw 0;
+  display: block;
+}
+ 
+.cont {
+  position:relative;
+  margin-bottom: 4vw;
+}
+
+.checkbox {
+  margin: 0vw 1vw 2vw 0;
+  float: left;
+  width: 3vw;
+  aspect-ratio: 1/1;
 }
 
 .input {
-  width: 15vw;
-  height: 1vw;
-  display: block;
-  padding: 1vw 0;
-  margin: 1vw 0;
+  width: 40vw;
+  height: 10px; 
+  margin: 2vw 2vw 1vw 0;
 }
 
+:focus {
+  outline: none;
+}
 
-.checkbox {
-  width: 2vw;
-  height: 2vw;
-  padding: 1vw;
-  margin: 1vw 1vw 1vw 0;
-  display: inline-block;
+.inputInvalid {
+  width: 40vw;
+  height: 10px;
+  border-color: red;
+}
+
+.label {
+  font-size: 2vw;
+  display: block;
+}
+
+.labelcheck {
+display: flex;
 }
 
 .button {
   width: 10vw;
-  height: 3vw;
+  height: 5vw;
+  margin-top: 3vw;
+}
+
+.captcha {
+  width: 20vw;
+  height: 10vw;
   display: block;
-}
-
-::placeholder {
-  color: grey;
-  opacity: .8;
-  line-height: 1vw;
-}
-
-input::-webkit-input-placeholder { 
-  font-size: 2vw;
-}
-
-input:-moz-placeholder {
-  font-size: 2vw;
 }

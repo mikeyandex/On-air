@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import {useEffect }  from 'react'
 import Header from './Header'
 import { setAuthData, setIsFetching, authMe } from '../../redux/authReducer'
 import { connect } from 'react-redux'
@@ -12,7 +12,6 @@ const HeaderContainer = (props) => {
     <Header
       login={props.login}
       isAuth={props.isAuth}
-      setAuthData={props.setAuthData}
       setIsFetching={props.setIsFetching}
     />
   )

@@ -24,8 +24,8 @@ const profileReducer = (state = initialState, action) => {
       }
       return {
         ...state,
-        wallData: [...state.wallData, newPost],
         textAreaValue: '',
+        wallData: [...state.wallData, newPost],        
       }
 
     case 'ADD_POST_TEXT':
@@ -72,9 +72,9 @@ export const updateStatus = (status) => {
   }
 }
 
-export const addPost = () => ({ type: CREATE_POST, })
+export const createPost = () => ({ type: CREATE_POST, })
 
-export const postChange = (text) => ({
+export const addPostText = (text) => ({
   type: ADD_POST_TEXT,
   text: text,
 })

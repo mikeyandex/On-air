@@ -33,24 +33,19 @@
   border-radius: 10px;
 }
 
-.button {
-  width: 5vw;
-  height: 5vw;
-  border-radius: 50%;
-  border-width: 0;
-  background-image: url('https://catherineasquithgallery.com/uploads/posts/2021-02/1613323933_189-p-kruglii-sinii-fon-225.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  color:rgb(31, 65, 133);
-  font-size: 1vw;
-  line-height: 5vw;
-  cursor: pointer;
-  margin-left: 1vw;
+.inputInvalid {
+  width: 40vw;
+  min-height: fit-content;
+  border-color: red;
 }
 
 .wrapperText {
-  display: flex;
+  display: block;
   justify-content: left;
   padding: 2vw;
 }
 
+.button {
+  width: 10vw;
+  height: 2vw
+}

@@ -2,7 +2,9 @@ import { authAPI } from '../api/api'
 
 const SET_IS_FETCHING = 'SET_IS_FETCHING'
 const SET_AUTH_DATA = 'SET_AUTH_DATA'
+const SET_AUTH_DELETE = 'SET_AUTH_DELETE'
 const SET_USER_ID = 'SET_USER_ID'
+const GET_CAPTCHA = 'GET_CAPTCHA'
 
 const initialState = {
   id: null,
@@ -22,6 +24,13 @@ const authReducer = (state = initialState, action) => {
         isAuth: true,
       }
 
+    case 'SET_AUTH_DELETE':
+      return {
+        ...state,
+        ...action.data,
+        isAuth: false,
+      }
+
     case 'SET_USER_ID':
       return {
         ...state,
@@ -37,13 +46,17 @@ const authReducer = (state = initialState, action) => {
   }
 }
 
+export const setAuthData = (data) => ({ type: SET_AUTH_DATA, data})
+
 export const authMe = () => {
   return (dispatch) => {
     dispatch(setIsFetching(true))
     authAPI.authMe()
-      .then(data => {
-        if (data.data.resultCode === 0) {
-          dispatch(setAuthData(data.data.data))
+      .then(payload => {
+        if (payload.data.resultCode === 0) {
+          debugger
+          let {id, email, login} = payload.data.data
+          dispatch(setAuthData({id, email, login}))
         }
         dispatch(setIsFetching(false))
       })
@@ -53,20 +66,36 @@ export const authMe = () => {
   }
 }
 
-export const loginMe = (email, password, rememberMe) => {
-  //return (dispatch) => {
-    authAPI.loginMe(email, password, rememberMe)
-    .then (data => {
-      //if (data.data.resultCode === 0) {
-        //dispatch(authMe())
-      //}
-      console.log(data)
-    })
+export const loginMe = (email, password, rememberMe, captcha) => {
+  return (dispatch) => {
+    authAPI.loginMe(email, password, rememberMe, captcha)
+      .then(payload => {
+        if (payload.data.resultCode === 0 ) {
+          console.log('OK')
+          dispatch(authAPI.authMe())
+        }
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+
   }
-//}
+}
 
+export const logoutMe = () => {
+  return (dispatch) => {
+    authAPI.logoutMe()
+      .then(payload => {
+        if (payload.resultCode === 0) {
+          dispatch(setAuthData('', '', ''))
+        }
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
 
-export const setAuthData = (data) => ({ type: SET_AUTH_DATA, data })
+  }
+}
 
 export const setUserId = (userId) => ({ type: SET_USER_ID, userId })
 

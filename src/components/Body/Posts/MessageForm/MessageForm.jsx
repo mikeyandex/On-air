@@ -1,6 +1,6 @@
-import React from 'react'
 import { Form, Field } from 'react-final-form'
 import { requiredField, maxValue, composeValidators } from '../../../../utils/validators'
+import { FORM_ERROR } from 'final-form'
 import classes from './MessageForm.module.css'
 
 const MessageForm = (props) => {

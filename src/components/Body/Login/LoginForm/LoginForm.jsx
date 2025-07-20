@@ -39,10 +39,9 @@ const LoginForm = (props) => {
               <Field
                 key={index}
                 name={field}
-                type={'text'}
                 validate={composeValidators(requiredField, maxValue(255))}
               >
-                {({ input, meta }) => (
+                {({ input, meta}) => (
                   <div className={classes.cont}>
                     <input
                       {...input}
@@ -53,7 +52,7 @@ const LoginForm = (props) => {
                         input.onChange(event)//внутренняя логика
                         handleChange(field)(event)//моя логика с именем параметра
                       }}
-                      placeholder={field === 'email' ? 'email' : 'пароль'}
+                       placeholder={field === 'email' ? 'Введите ваш email' : field === 'password' ? 'Введите ваш пароль' : 'Введите капчу'}
                     />
                     {meta.error && meta.touched && <span className={classes.span}>{meta.error}</span>}
                   </div>

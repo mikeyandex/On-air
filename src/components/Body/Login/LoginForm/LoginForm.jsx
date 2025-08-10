@@ -3,6 +3,7 @@ import { Form, Field } from 'react-final-form'
 import { requiredField, maxValue, composeValidators } from '../../../../utils/validators'
 import classes from './LoginForm.module.css'
 
+
 const LoginForm = (props) => {
   
   const [formValues, setFormValues] = useState({// Параметры собраны в массив
@@ -21,6 +22,7 @@ const LoginForm = (props) => {
       [name]: event.target.value //опрос содержимого полей ввода (onChange)
     })
   }
+      
 
   const onSubmit = (values) => {
     props.loginMe(values.email, values.password, values.rememberMe, values.captcha)

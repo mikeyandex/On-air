@@ -1,4 +1,5 @@
 import { authAPI } from '../api/api'
+import { Form, Field } from 'react-final-form'
 
 const SET_IS_FETCHING = 'SET_IS_FETCHING'
 const SET_AUTH_DATA = 'SET_AUTH_DATA'
@@ -70,15 +71,14 @@ export const loginMe = (email, password, rememberMe, captcha) => {
   return (dispatch) => {
     authAPI.loginMe(email, password, rememberMe, captcha)
       .then(payload => {
-        if (payload.data.resultCode === 0 ) {
-          console.log('OK')
-          dispatch(authAPI.authMe())
-        }
-      })
+          if (payload.data.resultCode === 0 ) {
+          dispatch(authAPI.authMe())}
+          else if (payload.resultCode !== 0) {alert(payload.data.messages)} 
+      })      
       .catch(function (error) {
-        console.log(error)
+         console.log(error)
       })
-
+      
   }
 }
 
@@ -86,9 +86,12 @@ export const logoutMe = () => {
   return (dispatch) => {
     authAPI.logoutMe()
       .then(payload => {
+          debugger
         if (payload.resultCode === 0) {
           dispatch(setAuthData('', '', ''))
         }
+        else if (payload.resultCode !== 0) {alert(payload.data.messages)}
+
       })
       .catch(function (error) {
         console.log(error)

@@ -5,9 +5,8 @@ import { setUserId, setIsFetching, loginMe, logoutMe } from '../../../../redux/a
 import LoginForm from './LoginForm'
 
 const LoginContainer = (props) => {
-  console.log(props)
-
-  const [cURL, setCURL] = useState(0);
+  
+  const [cURL, setCURL] = useState(0)
 
   useEffect(() => {
     authAPI.getCaptcha().then(data => {
@@ -15,6 +14,8 @@ const LoginContainer = (props) => {
       setCURL(captchaURL)
     })
   }, [])
+
+
 
   return (
     <LoginForm

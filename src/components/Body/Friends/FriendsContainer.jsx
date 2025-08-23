@@ -1,13 +1,14 @@
 import FriendsAPI from './FriendsAPI'
 import { connect } from 'react-redux'
 import { getUsers, getPage, follow, unfollow, setCurrentPage } from '../../../redux/friendsReducer'
+import { getFriendsPage, getPageSize, getTotalCount, getCurrentPage } from '../../../redux/selectors'
 
 let mapStateToProps = (state) => {
   return {
-    friends: state.friendsPage,
-    pageSize: state.friendsPage.pageSize,
-    totalCount: state.friendsPage.totalCount,
-    currentPage: state.friendsPage.currentPage,
+    friends: getFriendsPage(state),
+    pageSize: getPageSize(state),
+    totalCount: getTotalCount(state),
+    currentPage: getCurrentPage(state),
   }
 }
 

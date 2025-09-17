@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Profile from './Profile'
-import { createPost, addPostText, setProfile, getProfile, getStatus, updateStatus } from '../../../redux/profileReducer'
+import { createPost, addPostText, setProfile, getProfile, getStatus, updateStatus, setTopImage } from '../../../redux/profileReducer'
 import { connect } from 'react-redux'
 import WithAuthRedirect from '../../../HOC/WithAuthRedirect'
 import {
@@ -11,8 +11,7 @@ import {
 import { compose } from 'redux'
 
 const ProfileContainer = (props) => {
-  console.log(props)
-  useEffect(() => {
+    useEffect(() => {
     let userid = props.router.params.profileID
     if (!userid) {
       props.getProfile(props.id)
@@ -36,6 +35,7 @@ const ProfileContainer = (props) => {
       setTopImage={props.setTopImage}
       status={props.status}
       updateStatus={props.updateStatus}
+      topImage={props.topImage}
     />
   )
 }
@@ -48,6 +48,7 @@ let mapStateToProps = (state) => {
     status: state.wallPage.status,
     login: state.auth.login,
     id: state.auth.id,
+    topImage: state.wallPage.topImage,
   }
 }
 
@@ -75,6 +76,7 @@ export default compose(
     getProfile,
     getStatus,
     updateStatus,
+    setTopImage,
   }),
   withRouter,
   WithAuthRedirect

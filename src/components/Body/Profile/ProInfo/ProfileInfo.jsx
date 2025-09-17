@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import classes from './ProfileInfo.module.css'
 import Preloader from '../../../Common/Preloader/Preloader'
 import userAva from './../../../../image/userAva.jpg'
@@ -6,23 +6,27 @@ import plus from './../../../../image/plus.svg'
 import Slogan from './Slogan/Slogan'
 
 const ProfileInfo = (props) => {
+  
+  const uploadRef = useRef(null)
 
-  let [topImage, setTopImage] = useState('https://cdnb.artstation.com/p/assets/images/images/008/512/123/large/vitali-timkin-anythin-city-vitali-timkin1.jpg')
+  let [plusAppear, togglePlus] = useState(false)//Флаг строки ввода видна/не видна
+    //console.log(props.topImage)
+    /*
+    useEffect(() => {
+      console.log(props.topImage);
+  }, [plusAppear])
+  */
 
-  let [plusAppear, togglePlus] = useState(false)
-
-  let handleClick = () => {
-    uploadRef.current.value = ''
+  let handleClick = () => { 
+  uploadRef.current.value = ''
     togglePlus(!plusAppear)
   }
 
   let changeImage = () => {
-
-    setTopImage(uploadRef.current.value)
+    props.setTopImage(uploadRef.current.value)
     uploadRef.current.style.className = 'plusDisplayNone'
+    
   }
-
-  const uploadRef = useRef();
 
   if (!props.profileData) {
     return <Preloader />
@@ -35,12 +39,13 @@ const ProfileInfo = (props) => {
           ? classes.plus
           : classes.plusDisplayNone}
           ref={uploadRef}
-          placeholder='https://image.jpg'
+          placeholder='https://image.jpg and double click the mouse'
           onDoubleClick={changeImage}
+          autofocus
           type="url" />
         <img className={classes.image}
           onClick={handleClick}
-          src={topImage} />
+          src={props.topImage} />
 
         <img className={classes.avatar} src={props.profileData.photos.large != null
           ? props.profileData.photos.large

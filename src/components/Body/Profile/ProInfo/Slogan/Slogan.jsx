@@ -31,7 +31,7 @@ const Slogan = (props) => {
       <p className={editMode === false
         ? classes.slogan
         : classes.invisible}
-        onDoubleClick={setTrue} autofocus>
+        onClick={setTrue} autofocus>
         {props.status != null
           ? props.status
           : ' '
@@ -43,7 +43,7 @@ const Slogan = (props) => {
           ? classes.invisible
           : classes.inputField}
         ref={inputRef}
-        onDoubleClick={setFalse}
+        onClick={setFalse}
         type='text'
         onChange={sendStatus}
       />

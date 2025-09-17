@@ -5,8 +5,9 @@
     "\\src\\components",
     "\\src\\components\\Body",
     "\\src\\components\\Body\\Friends",
+    "\\src\\components\\Body\\Login",
+    "\\src\\components\\Body\\Login\\LoginForm",
     "\\src\\redux"
   ],
-  "SelectedNode": "\\src\\redux\\profileReducer.js",
   "PreviewInSolutionExplorer": false
 }

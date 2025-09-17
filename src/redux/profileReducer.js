@@ -5,6 +5,7 @@ const ADD_POST_TEXT = 'ADD_POST_TEXT'
 const SET_PROFILE = 'SET_PROFILE'
 const SET_STATUS = 'SET_STATUS'
 const SET_UPDATE_STATUS = 'SET_UPDATE_STATUS'
+const SET_TOP_IMAGE = 'SET_TOP_IMAGE'
 
 
 const initialState = {
@@ -12,9 +13,11 @@ const initialState = {
   textAreaValue: '',
   status: 'status',
   profile: [],
+  topImage: 'https://i.pinimg.com/736x/c3/d7/db/c3d7db7de6fbae9ade5c221e0514b8b6.jpg',
 }
 
 const profileReducer = (state = initialState, action) => {
+      
   switch (action.type) {
     case 'CREATE_POST':
       let newPost = {
@@ -43,9 +46,13 @@ const profileReducer = (state = initialState, action) => {
     case 'SET_UPDATE_STATUS':
       return { ...state, status: action.text }
 
+    case 'SET_TOP_IMAGE':
+      return { ...state, topImage: action.text }
+
     default:
       return state
   }
+
 }
 
 export const getProfile = (profileID) => {
@@ -73,6 +80,12 @@ export const updateStatus = (status) => {
 }
 
 export const createPost = () => ({ type: CREATE_POST, })
+
+export const setTopImage = (text) => ({
+  type: SET_TOP_IMAGE,
+  text: text,
+})
+
 
 export const addPostText = (text) => ({
   type: ADD_POST_TEXT,

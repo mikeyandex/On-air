@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Friends\\FriendsContainer.jsx||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\Body\\Friends\\FriendsContainer.jsx||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\ProInfo\\ProfileInfo.jsx||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\Body\\Profile\\ProInfo\\ProfileInfo.jsx||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\redux\\selectors.js||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\redux\\selectors.js||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\redux\\profileReducer.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\redux\\profileReducer.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\ProInfo\\Slogan\\Slogan.jsx||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\Body\\Profile\\ProInfo\\Slogan\\Slogan.jsx||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\Profile.jsx||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\Body\\Profile\\Profile.jsx||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\ProfileContainer.jsx||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\Body\\Profile\\ProfileContainer.jsx||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 386,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,28 +46,67 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Slogan.jsx",
+              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\ProInfo\\Slogan\\Slogan.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Body\\Profile\\ProInfo\\Slogan\\Slogan.jsx",
+              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\ProInfo\\Slogan\\Slogan.jsx",
+              "RelativeToolTip": "src\\components\\Body\\Profile\\ProInfo\\Slogan\\Slogan.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-09-17T18:03:37.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Profile.jsx",
+              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\Profile.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Body\\Profile\\Profile.jsx",
+              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\Profile.jsx",
+              "RelativeToolTip": "src\\components\\Body\\Profile\\Profile.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-09-10T19:43:08.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProfileContainer.jsx",
+              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\ProfileContainer.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Body\\Profile\\ProfileContainer.jsx",
+              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\ProfileContainer.jsx",
+              "RelativeToolTip": "src\\components\\Body\\Profile\\ProfileContainer.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-09-10T18:28:07.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "selectors.js",
-              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\redux\\selectors.js",
-              "RelativeDocumentMoniker": "src\\redux\\selectors.js",
-              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\redux\\selectors.js",
-              "RelativeToolTip": "src\\redux\\selectors.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Title": "profileReducer.js",
+              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\redux\\profileReducer.js",
+              "RelativeDocumentMoniker": "src\\redux\\profileReducer.js",
+              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\redux\\profileReducer.js",
+              "RelativeToolTip": "src\\redux\\profileReducer.js",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-23T14:31:28.946Z",
+              "WhenOpened": "2025-09-10T17:24:04.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FriendsContainer.jsx",
-              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Friends\\FriendsContainer.jsx",
-              "RelativeDocumentMoniker": "src\\components\\Body\\Friends\\FriendsContainer.jsx",
-              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Friends\\FriendsContainer.jsx",
-              "RelativeToolTip": "src\\components\\Body\\Friends\\FriendsContainer.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Title": "ProfileInfo.jsx",
+              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\ProInfo\\ProfileInfo.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Body\\Profile\\ProInfo\\ProfileInfo.jsx",
+              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\dev\\react\\react1\\src\\components\\Body\\Profile\\ProInfo\\ProfileInfo.jsx",
+              "RelativeToolTip": "src\\components\\Body\\Profile\\ProInfo\\ProfileInfo.jsx",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACkAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-08-23T13:56:12.822Z",
+              "WhenOpened": "2025-09-10T17:23:08.281Z",
               "EditorCaption": ""
             },
             {
